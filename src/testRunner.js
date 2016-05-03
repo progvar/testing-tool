@@ -10,10 +10,16 @@ const mocha = new Mocha({
 
 
 function testRunner(testFilePath) {
-    const filePath = testFilePath || config.test
+    let filePath
 
-    config.logger.info('File path at testRunner: ', testFilePath)
-    mocha.addFile(filePath)
+    try {
+        filePath = testFilePath
+        console.log('File path for testRunner: ', testFilePath)
+        mocha.addFile(filePath)
+    } catch (ex) {
+        throw ex
+    }
+    
     this.array = []
     this.output = {
         title : undefined,
