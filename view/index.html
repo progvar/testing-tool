@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+	<title>SimTest</title>
+    <!-- <script type='text/javascript' src='/socket.io/socket.io.js'></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type='text/javascript' src='client.js'></script>
+	<style>
+		div {
+            word-wrap: break-word;
+			text-align: center;
+		}
+
+        .button-box {
+            text-align:center;
+            margin-top:20px;
+            margin-bottom:50px;
+        }
+
+		#content {
+			text-align: center;
+		}
+        th {
+            text-align: center;
+        }
+        div.col-lg-6:first-child {
+             border-right: solid 1px #ddd;
+        }
+        div.col-lg-6:nth-child(2) {
+            border-left: solid 1px #ddd;
+            margin: -1px;
+        }
+
+        .hiddenRow {
+            padding: 0 !important;
+        }
+
+        tr {
+            text-align: left;
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+        }
+
+        td {
+            cursor:pointer;
+            display: table-cell;
+        }
+
+        pre {
+            text-align: left;
+        }
+	</style>	
+	<!--[if IE]>
+		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+	<![endif]-->
+</head>
+<body>
+</body>
+<div class='container'>
+    <form role="form" action="/" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">Test file: </label>
+            <input type="file" class="form-control" name="testfile" id="file">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Upload</button>
+    </form>
+
+    <div class="button-box col-lg-12">
+        <a id='start' class="btn btn-success btn-lg" role="button">Start / Restart</a>
+        <a id='stop' class="btn btn-danger btn-lg" role="button">Stop</a>
+    </div>
+
+    <div class="table">
+        <table id='content' class="table table-bordered col-lg-12">
+            <thead>
+            <tr>
+                <th style='width:650px;'>Testcase</th>
+                <th>Started</th>
+                <th>Ended</th>
+                <th>Passed</th>
+                <th>Failed (error)</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
