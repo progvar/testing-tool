@@ -10,5 +10,3 @@ UploadTestFile.post('/', require('./uploadTest').uploadTestFile)
 module.exports = {
     UploadTestFile
 }
-
-
